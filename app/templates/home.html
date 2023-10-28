@@ -1,184 +1,166 @@
-<style>
-#ageVerificationOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
-    z-index: 1000;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebrand Boston</title>
+
+  <style>
+  #ageVerificationOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  #ageVerificationBox {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      width: 80%;
+      max-width: 400px;
+      text-align: center;
+  }
+
+  button {
+      margin: 10px;
+      padding: 5px 15px;
+      cursor: pointer;
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 3px;
+  }
+
+  button:hover {
+      background-color: #0056b3;
+  }
+
+  /* landing page start */
+  body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+  header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+  .hero {
+    background-image: url('path_to_your_image.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-#ageVerificationBox {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    width: 80%;
-    max-width: 400px;
-    text-align: center;
-}
-
-button {
-    margin: 10px;
-    padding: 5px 15px;
-    cursor: pointer;
-    border: none;
-    background-color: #007bff;
     color: #fff;
-    border-radius: 3px;
-}
+        }
 
-button:hover {
-    background-color: #0056b3;
-}
+    .cta-button {
+        padding: 10px 20px;
+        background-color: green;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+    }
 
-/* Start Global Rules */
-* {
-  box-sizing: border-box;
-}
-body {
-  font-family: 'Open Sans', sans-serif;
-}
-a {
-  text-decoration: none;
-}
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.container {
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* Small */
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-/* Medium */
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-/* Large */
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
-/* End Global Rules */
+    .cta-button:hover {
+          background-color: darkgreen;
+      }
 
-.landing-page .content .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 140px;
-  min-height: calc(100vh - 80px);
-}
-@media (max-width: 767px) {
-  .landing-page .content .container {
-    gap: 0;
-    min-height: calc(100vh - 101px);
-    justify-content: center;
-    flex-direction: column-reverse;
-  }
-}
-@media (max-width: 767px) {
-  .landing-page .content .info {
-    text-align: center;
-    margin-bottom: 15px 
-  }
-}
-.landing-page .content .info h1 {
-  color: #5d5d5d;
-  font-size: 44px;
-}
-.landing-page .content .info p {
-  margin: 0;
-  line-height: 1.6;
-  font-size: 15px;
-  color: #5d5d5d;
-}
-.landing-page .content .info button {
-  border: 0;
-  border-radius: 20px;
-  padding: 12px 30px;
-  margin-top: 30px;
-  cursor: pointer;
-  color: #FFF;
-  background-color: #6c63ff;
-}
-.landing-page .content .image img {
-  max-width: 100%;
-}
-.landing-page .content .info .signup-button {
-  display: inline-block; 
-  border: 0;
-  border-radius: 20px;
-  padding: 12px 30px;
-  margin-top: 30px;
-  cursor: pointer;
-  color: #FFF;
-  background-color: #6c63ff;
-  text-align: center;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
+    .section {
+          padding: 2rem;
+          text-align: center;
+          padding-top: 60px;
+      }
 
-.landing-page .content .info .signup-button:hover {
-  background-color: #534cd1; /* Slightly darker shade when hovered */
-}
+    footer {
+          background-color: #333;
+          color: #fff;
+          text-align: center;
+          padding: 1rem 0;
+      }
 
-/* End Landing Page */
-</style>
+    .social-icon {
+          margin: 0 10px;
+      }
 
-<body>
+  </style>
 
-  <div id="ageVerificationOverlay">
-    <div id="ageVerificationBox">
-        <h2>Age Verification</h2>
-        <p>You must be 21 years of age or older to access this site. Please verify your age to proceed.</p>
-        <button onclick="denyAccess()">I am under 21</button>
-        <button onclick="allowAccess()">I am 21 or older</button>
-    </div>
-  </div>
+  <body>
 
-  <!-- Start Landing Page -->
-  <div class="landing-page">
-    <div class="content">
-      <div class="container">
-        <div class="info">
-          <h1>Boston Dispensary Coming Soon!</h1>
-          <p>Lighting the Path to Social Equity! 🍃✨ Join us in Q1 2024 for a brighter, fairer tomorrow.</p>
-          <a href="https://forms.office.com/r/vnMATpcxxp" class="signup-button">Click Here For More Information</a>
-        </div>
-        <div class="image">
-          <img src="https://i.postimg.cc/q7zmkJY8/firebrand-logo.png">
-        </div>
+    <!-- <header>
+      [Your Dispensary Logo Here]
+    </header> -->
+
+    <div id="ageVerificationOverlay">
+      <div id="ageVerificationBox">
+          <h2>Age Verification</h2>
+          <p>You must be 21 years of age or older to access this site. Please verify your age to proceed.</p>
+          <button onclick="denyAccess()">I am under 21</button>
+          <button onclick="allowAccess()">I am 21 or older</button>
       </div>
     </div>
-  </div>
-  <!-- End Landing Page -->
+
+    <!-- <div class="hero">
+      <h1>Premium Cannabis in the Heart of Boston</h1>
+      <p>Quality strains. Knowledgeable staff. Experience the difference.</p>
+      <a href="#" class="cta-button">Learn More</a>
+    </div> -->
+
+    <div class="section">
+        <img src="https://i.postimg.cc/q7zmkJY8/firebrand-logo.png" alt="About Us">
+        <p>Located conveniently in downtown Boston, Firebrand offers a wide range of premium cannabis products. From beginners to seasoned connoisseurs, our knowledgeable team is here to guide you.</p>
+    </div>
+
+    <div class="section">
+        <h2>Visit Us in Boston</h2>
+        <p>727 Atlantic Ave, Boston, MA 02111</p>
+        <p>Monday - Saturday: 9 AM - 10 PM</p>
+        <p>Sunday: 10 AM - 8 PM</p>
+    </div>
+
+    <div class="section">
+        <h2>Stay Connected</h2>
+        <p>Join our community and stay updated on new products, promotions, and events.</p>
+        <a href="https://forms.office.com/r/vnMATpcxxp" class="cta-button">Sign Up Now</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Firebrand Boston. All Rights Reserved.</p>
+        <p><a href="{{ url_for('privacy') }}">Privacy Policy</a> | <a href="{{ url_for('terms') }}">Terms of Use</a> | <a href="https://forms.office.com/r/vnMATpcxxp">Careers</a></p>
+        <div>
+            <a href="#" class="social-icon"><img src="path_to_facebook_icon.png" alt="Facebook"></a>
+            <a href="https://twitter.com/FirebrandBos617" class="social-icon"><img src="path_to_twitter_icon.png" alt="Twitter"></a>
+            <!-- Add more social media icons as needed -->
+        </div>
+        <p>Must be 21 or older to purchase. Consume responsibly.</p>
+    </footer>
 
 
-  <script>
-  function allowAccess() {
-      document.getElementById('ageVerificationOverlay').style.display = 'none';
-  }
 
-  function denyAccess() {
-      alert('You must be 21 or older to access this site.');
-      // You can redirect them to another page or simply not allow them to proceed.
-      // window.location.href = "https://www.example.com";
-  }
-</script>
+    <script>
+    function allowAccess() {
+        document.getElementById('ageVerificationOverlay').style.display = 'none';
+    }
+
+    function denyAccess() {
+        alert('You must be 21 or older to access this site.');
+        // You can redirect them to another page or simply not allow them to proceed.
+        // window.location.href = "https://www.example.com";
+    }
+  </script>
 
 </body>
+</head>
